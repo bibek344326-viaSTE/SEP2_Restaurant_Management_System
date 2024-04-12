@@ -1,7 +1,8 @@
 package model;
+
 import java.util.ArrayList;
 
-class TableList implements TableManagement {
+public class TableList implements TableManagement {
     private ArrayList<Table> tables;
 
     public TableList() {
@@ -10,8 +11,8 @@ class TableList implements TableManagement {
 
     // Method to create a new table
     @Override
-    public void createTable(int tableNumber) {
-        Table newTable = new Table(tableNumber);
+    public void createTable(int tableNumber, int capacity) {
+        Table newTable = new Table(tableNumber, capacity);
         tables.add(newTable);
     }
 
@@ -45,6 +46,8 @@ class TableList implements TableManagement {
     public int getNumberOfTables() {
         return tables.size();
     }
+
+    // Method to get all tables
     public ArrayList<Table> getAllTables() {
         return tables;
     }

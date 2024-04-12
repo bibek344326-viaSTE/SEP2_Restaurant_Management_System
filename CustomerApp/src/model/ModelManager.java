@@ -12,8 +12,9 @@ public class ModelManager implements TableManagement {
         property = new PropertyChangeSupport(this);
         tableList = new TableList();
     }
-    public void createTable(int tableNumber) {
-        tableList.createTable(tableNumber);
+
+    public void createTable(int tableNumber, int capacity) {
+        tableList.createTable(tableNumber, capacity);
         property.firePropertyChange("TableCreated", null, tableNumber);
     }
 
