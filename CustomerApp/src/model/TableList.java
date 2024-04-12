@@ -51,6 +51,15 @@ public class TableList implements TableManagement {
     public ArrayList<Table> getAllTables() {
         return tables;
     }
+    public ArrayList<Table> getVacantTables() {
+        ArrayList<Table> vacantTables = new ArrayList<>();
+        for (Table table : tables) {
+            if (!table.isOccupied()) {
+                vacantTables.add(table);
+            }
+        }
+        return vacantTables;
+    }
 }
 
 
