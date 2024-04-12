@@ -45,6 +45,9 @@ class TableList implements TableManagement {
     public int getNumberOfTables() {
         return tables.size();
     }
+    public ArrayList<Table> getAllTables() {
+        return tables;
+    }
 }
 
 
