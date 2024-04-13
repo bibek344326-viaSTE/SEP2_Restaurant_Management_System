@@ -12,6 +12,15 @@ public class ModelManager implements TableManagement {
         property = new PropertyChangeSupport(this);
         tableList = new TableList();
     }
+    @Override
+    public void addListener(PropertyChangeListener listener) {
+        property.addPropertyChangeListener(listener);
+    }
+
+    @Override
+    public void removeListener(PropertyChangeListener listener) {
+        property.removePropertyChangeListener(listener);
+    }
 
     public void createTable(int tableNumber, int capacity) {
         tableList.createTable(tableNumber, capacity);
@@ -34,5 +43,8 @@ public class ModelManager implements TableManagement {
 
     public ArrayList<Table> getAllTables() {
         return tableList.getAllTables();
+    }
+    public ArrayList<Table> getVacantTables() {
+        return tableList.getVacantTables();
     }
 }
