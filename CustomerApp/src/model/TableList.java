@@ -1,18 +1,13 @@
 package model;
+
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
-class TableList implements TableManagement {
+public class TableList implements TableManagementModel {
     private ArrayList<Table> tables;
 
     public TableList() {
         tables = new ArrayList<>();
-    }
-
-    // Method to create a new table
-    @Override
-    public void createTable(int tableNumber) {
-        Table newTable = new Table(tableNumber);
-        tables.add(newTable);
     }
 
     // Method to delete a table
@@ -24,6 +19,13 @@ class TableList implements TableManagement {
                 break;
             }
         }
+    }
+
+
+    @Override
+    public void createTable(int tableNumber, int capacity) {
+        Table newTable = new Table(tableNumber, capacity);
+        tables.add(newTable);
     }
 
     // Method to update the status of a table
@@ -45,6 +47,29 @@ class TableList implements TableManagement {
     public int getNumberOfTables() {
         return tables.size();
     }
+
+    // Method to get all tables
+    public ArrayList<Table> getAllTables() {
+        return tables;
+    }
+    public ArrayList<Table> getVacantTables() {
+        ArrayList<Table> vacantTables = new ArrayList<>();
+        for (Table table : tables) {
+            if (!table.isOccupied()) {
+                vacantTables.add(table);
+            }
+        }
+        return vacantTables;
+    }
+
+
+    @Override
+    public void addListener(PropertyChangeListener listener) {
+
+    }
+
+    @Override
+    public void removeListener(PropertyChangeListener listener) {
+
+    }
 }
-
-
