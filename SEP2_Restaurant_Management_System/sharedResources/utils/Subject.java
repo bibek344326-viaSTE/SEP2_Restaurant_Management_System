@@ -1,4 +1,4 @@
-package sharedResouces.utils;
+package sharedResources.utils;
 
 import java.beans.PropertyChangeListener;
 

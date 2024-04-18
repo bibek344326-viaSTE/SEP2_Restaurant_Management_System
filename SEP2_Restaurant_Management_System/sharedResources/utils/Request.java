@@ -1,21 +1,18 @@
-package sharedResouces.utils;
+package sharedResources.utils;
 
 import java.io.Serializable;
 
 public class Request implements Serializable {
     private String type;
-    private Object arg;
-
-    public Request(String type, Object arg) {
+    private Object object;
+    public Request(String type, Object object){
         this.type = type;
-        this.arg = arg;
+        this.object = object;
     }
-
     public String getType() {
         return type;
     }
-
-    public Object getArg() {
-        return arg;
+    public Object getObject() {
+        return object;
     }
 }

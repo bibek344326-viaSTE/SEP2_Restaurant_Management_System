@@ -1,7 +1,7 @@
 package client.view.login;
 
 import client.core.ModelFactory;
-import client.model.LoginModel;
+import client.model.login.LoginModel;
 
 public class LoginViewModel {
     private final LoginModel loginModel;

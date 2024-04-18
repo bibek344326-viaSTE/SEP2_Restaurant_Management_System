@@ -1,7 +1,7 @@
 package client.core;
 
-import client.model.LoginModel;
-import client.model.LoginModelManager;
+import client.model.login.LoginModel;
+import client.model.login.LoginModelManager;
 
 public class ModelFactory {
 
